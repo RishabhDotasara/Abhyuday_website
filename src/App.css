@@ -124,7 +124,7 @@ body
 }
 
 .nav .wrapper_nav .left_part .logo {
-  background: green;
+  background: transparent;
   width: fit-content;
   margin-left: 20px;
 }

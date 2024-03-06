@@ -12,7 +12,7 @@ export default function Navbar() {
             <div className="left_part">
                 {/* One that consists of the logo or the brand name */}
                 <div className="logo">
-                    <img src='./Images/abhyuday_name_logo.png' alt="Abhyuday-Logo"/>
+                    <img src="./Images/abhyuday_circle_logo.png" alt="Abhyuday-Logo"/>
                 </div>
             </div>
             <div className="right_part">
