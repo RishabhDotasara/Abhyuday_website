@@ -1,5 +1,5 @@
 import React from 'react'
-import {TfiRocket} from 'react-icons/tfi'
+import {BsRocket} from 'react-icons/bs'
 
 export default function Home() {
   document.title = "Abhyuday | Home"
@@ -10,7 +10,7 @@ export default function Home() {
               <span className='club_name'>ABHY</span>
               <span className='club_rocketry'>ROCKETRY</span>
               <div className="rocket">
-                <TfiRocket/>
+                <BsRocket/>
               </div>
             </div>
             <div className="right_part">

@@ -318,11 +318,12 @@ body
 /* ROCKET */
 .rocket 
 {
-  font-size: 8rem;
+  font-size: 15rem;
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translateX(-53%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
   filter: invert(0);
   color: white;
+  
 }
