@@ -1,38 +1,328 @@
-.App {
-  text-align: center;
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  /* overflow-x: hidden; */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body
+{
+  overflow-x: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* GO TO TOP BUTTON */
+.go_to_top
+{
+  position: fixed;
+  z-index: 2;
+  cursor: pointer;
+  background: orange;
+  color: black;
+  right: 50px;
+  bottom: 50px;
+  padding: 15px;
+  border-radius: 10px;
   display: flex;
+  align-items: center;
+  transition: 0.2s all ease-in-out;
+  /* transform: scale(0); */
+  justify-content: center;
+}
+
+/* NAVBAR CSS */
+.nav {
+  width: 100vw;
+  height: 70px;
+  background-color: black;
+  color: white;
+  /* position: fixed; */
+ 
+  transition: 1s position ease-in-out;
+}
+
+.nav .wrapper_nav {
+  width: 97%;
+  height: 100%;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav .wrapper_nav .left_part {
+  width: 50%;
+  background-color: transparent;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+.nav .wrapper_nav .right_part {
+  width: 50%;
+  background: transparent;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav .wrapper_nav .right_part .links {
+  list-style-type: none;
+  display: flex;
+  width: 100%;
+  gap: 3rem;
+  justify-content: right;
+  padding-right: 10px;
+}
+
+.nav .wrapper_nav .right_part .links .link a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  /* background: yellow; */
+  height: 100%;
+  position: relative;
+  padding: 12px 0;
+  transition: 0.2s linear all;
+}
+
+.nav .wrapper_nav .right_part .links .link a::after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  width: 0;
+  margin-left: auto;
+  background: orange;
+  transition: 0.1s linear all;
+}
+
+.nav .wrapper_nav .right_part .links .link a:hover::after {
+  width: 100%;
+}
+
+.nav .wrapper_nav .right_part .links .link .active {
+  color: orange;
+}
+
+.nav .wrapper_nav .right_part .links .link .active::after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  width: 100%;
+  background: orange;
+}
+
+.nav .wrapper_nav .right_part .links .link a:hover {
+  color: orange;
+}
+
+.nav .wrapper_nav .left_part .logo {
+  background: green;
+  width: fit-content;
+  margin-left: 20px;
+}
+
+/* FOOTER */
+.wrapper_footer {
+  width: 100vw;
+  height: 500px;
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper_footer .top_part {
+  background-color: black;
+  height: 75%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wrapper_footer .bottom_part {
+  display: flex;
+  
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgba(128, 128, 128, 0.432);
+  /* background-color: orange; */
+  height: 25%;
+}
+
+.wrapper_footer .top_part .left_part {
+  width: calc(100vw / 2);
+  background-color: transparent;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 15px;
+  border-right: 1px solid grey;
+}
+
+.wrapper_footer .top_part .left_part .logo {
+  font-size: 1.2rem;
+}
+.wrapper_footer .top_part .left_part a {
+  text-decoration: none;
   color: white;
+  background: orange;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: 500;
 }
 
-.App-link {
-  color: #61dafb;
+.wrapper_footer .top_part .right_part {
+  width: calc(100vw / 2);
+  background: transparent;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.wrapper_footer .top_part .right_part .social_media {
+  display: flex;
+  gap: 30px;
+}
+
+.wrapper_footer .top_part .right_part .social_media a {
+  text-decoration: none;
+  color: white;
+  background: rgb(226, 148, 4);
+  padding: 10px 10px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.1s linear;
+}
+
+
+.wrapper_footer .top_part .right_part span 
+{
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.wrapper_footer .top_part .right_part .social_media a:hover
+{
+    transform: scale(1.1);
+}
+
+
+/* LANDING PAGE PART */
+.landing_section
+{
+  width: 100vw;
+  height: 100vh;
+  background: orange;
+  display: flex;
+  position: relative;
+}
+
+.landing_section .left_part 
+{
+  width: calc(100vw/2);
+  height: 100%;
+  background: orange;
+  display: flex;
+  gap: 100px;
+  flex-direction: column;
+  justify-content: top;
+  align-items: center;
+  overflow: hidden;
+}
+
+
+.landing_section .left_part .club_rocketry
+{
+  font-size: 4rem;
+  letter-spacing: 15px;
+  
+}
+
+
+.landing_section .left_part .club_name 
+{
+  color: black;
+  font-weight: bold;
+  background-color: transparent;
+  height: fit-content;
+  width: fit-content;
+  text-align: center;
+  font-size: 8rem;
+  letter-spacing: 80px;
+}
+
+.landing_section .right_part
+{
+  width: calc(100vw/2);
+  height: 100%;
+  background: black;
+  display: flex;
+  justify-content: top;
+  flex-direction: column;
+  gap: 100px;
+  align-items: center;
+} 
+
+.landing_section .right_part .iitm_text
+{
+  position: absolute;
+  color: orange;
+  bottom: 100px;
+  font-size: 3rem;
+  font-weight: bold;
+  right: 70px;
+}
+
+.landing_section .right_part .club_name 
+{
+  color: orange;
+  font-weight: bold;
+  background: transparent;
+  height: fit-content;
+  font-size: 8rem;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: right;
+ 
+  /* justify-content: center; */
+  letter-spacing: 80px;
+}
+
+.landing_section .right_part .club_rocketry
+{
+  font-size: 4rem;
+  letter-spacing: 15px;
+  color: orange;
+}
+
+/* ROCKET */
+.rocket 
+{
+  font-size: 8rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-53%) translateY(-50%);
+  filter: invert(0);
+  color: white;
 }
