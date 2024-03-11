@@ -305,7 +305,7 @@ body
   height: fit-content;
   width: fit-content;
   text-align: center;
-  font-size: 8rem;
+  font-size: 6rem;
   letter-spacing: 80px;
 }
 
@@ -340,7 +340,7 @@ body
   font-weight: bold;
   background: transparent;
   height: fit-content;
-  font-size: 8rem;
+  font-size: 6rem;
   width: fit-content;
   display: flex;
   align-items: center;
