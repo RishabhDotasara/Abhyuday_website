@@ -69,7 +69,7 @@ function App() {
       
       {/* Routing */}
       <RouterProvider router={router}/>
-      <div className="go_to_top" style={{opacity:active ? 1:0}} onClick={GoToTop}><FaArrowUp/></div>
+      <motion.div className="go_to_top" style={{opacity:active ? 1:0,scale:active? 1:0}} onClick={GoToTop}><FaArrowUp/></motion.div>
     </>
   );
 }

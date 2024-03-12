@@ -1,14 +1,24 @@
 import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import {motion} from "framer-motion"
+import { motion } from "framer-motion";
 
 export default function Navbar() {
-  const [currentPage, setCurrentPage] = useState("home");
+  const [currentPage, setCurrentPage] = useState("Home");
 
-  // Js to keep navbar in track 
-  
+  // Js to keep navbar in track
+  const links = ["Home", "Work", "Team", "Sponsors", "Contact"];
+  const hrefs = ["/","/work","/team","/sponsors","/contact"];
+  // const linkVariants = {
+  //   intitial: {translateY: }
+  // }
+
   return (
-    <div className="nav">
+    <motion.div
+      className="nav"
+      initial={{ translateY: -100 }}
+      animate={{ translateY: [-100, -100, 0, 0] }}
+      transition={{ duration: 4, type: "tween", times: [0, 0.25, 0.5, 1] }}
+    >
       <div className="wrapper_nav">
         <div className="left_part">
           {/* One that consists of the logo or the brand name */}
@@ -19,65 +29,25 @@ export default function Navbar() {
         <div className="right_part">
           {/* One that consists the whole navigation menu */}
           <ul className="links">
-            <li className="link">
-              <Link
-                to="/"
-                onClick={() => {
-                  setCurrentPage("home");
-                }}
-                className={currentPage === "home" ? "active" : ""}
-              >
-                Home
-              </Link>
-            </li>
-            <li className="link">
-              <Link
-                to="/work"
-                onClick={() => {
-                  setCurrentPage("work");
-                }}
-                className={currentPage === "work" ? "active" : ""}
-              >
-                Work
-              </Link>
-            </li>
-            <li className="link">
-              <Link
-                to="/team"
-                onClick={() => {
-                  setCurrentPage("team");
-                }}
-                className={currentPage === "team" ? "active" : ""}
-              >
-                Team
-              </Link>
-            </li>
-            <li className="link">
-              <Link
-                to="/sponsors"
-                onClick={() => {
-                  setCurrentPage("sponsors");
-                }}
-                className={currentPage === "sponsors" ? "active" : ""}
-              >
-                Sponsors
-              </Link>
-            </li>
-            <li className="link">
-              <Link
-                to="/contact"
-                onClick={() => {
-                  setCurrentPage("contact");
-                }}
-                className={currentPage === "contact" ? "active" : ""}
-              >
-                Contact
-              </Link>
-            </li>
+            {links.map((pageName,index) => {
+              
+              return (
+                <li className="link">
+                  <Link
+                    to={hrefs[index]}
+                    onClick={() => {
+                      setCurrentPage(pageName);
+                    }}
+                    className={currentPage === pageName ? "active" : ""}
+                  >
+                    {pageName}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>
-      
-    </div>
+    </motion.div>
   );
 }

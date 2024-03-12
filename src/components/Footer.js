@@ -14,6 +14,8 @@ export default function Footer() {
                 </div>
                 
                 <div className='right_part'>
+
+                   
                         <span>Let's Connect!</span>
                     <div className='social_media'>
                         <a href="#"><FaFacebookF/></a>
